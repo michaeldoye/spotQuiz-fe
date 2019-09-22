@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[![Build Status](https://travis-ci.org/michaeldoye/spotQuiz-fe.svg?branch=master)](https://travis-ci.org/michaeldoye/spotQuiz-fe)
+[![codebeat badge](https://codebeat.co/badges/841156b7-c5d1-454b-ab87-e07b83b765c5)](https://codebeat.co/projects/github-com-michaeldoye-spotquiz-fe-master)
+
 ## Available Scripts
 
 In the project directory, you can run:

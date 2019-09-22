@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { PageContainer } from './layout/PageContainer';
+import { createStore } from './context';
+import { load, SPQ_SESSION_STORAGE } from './helpers/session-storage';
+import { events } from './context/events';
+import { Content } from './routing/Content';
+import { Header } from './layout/Header/Header';
 
 const App: React.FC = () => {
+  const { GlobalStore }: any = createStore({
+    initialState: {
+      token: load(SPQ_SESSION_STORAGE.TOKEN, false)
+      // application: load(SPQ_SESSION_STORAGE.APPLICATION)
+    },
+    events
+  });
+
   return (
-    <div className="App">
-      <header className="App__header">
-        <img src={logo} className="App__logo" alt="logo" />
-        <h2>Welcome to React</h2>
-        <p>
-          Edit the <code>src/App.tsx</code> file and save to reload.
-        </p>
-        <a
-          className="App__link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalStore>
+      <Router>
+        <Header />
+        <PageContainer>
+          <Content />
+        </PageContainer>
+      </Router>
+    </GlobalStore>
   );
 };
 

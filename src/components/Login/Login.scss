@@ -1,0 +1,7 @@
+.login-component {
+  @extend .form-group;
+
+  &__submit-button {
+    @extend .btn, .btn-primary;
+  }
+}

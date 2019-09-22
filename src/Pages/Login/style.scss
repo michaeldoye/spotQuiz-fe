@@ -1,0 +1,17 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - #{$nav-height});
+
+  &__container {
+    max-width: 375px;
+    max-height: 375px;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    padding: 3rem;
+    background-color: $white;
+    @extend .shadow;
+  }
+}

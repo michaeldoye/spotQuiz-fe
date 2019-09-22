@@ -1,23 +1,38 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Header } from './layout/Header/Header';
+import { PageContainer } from './layout/PageContainer';
+import { Content } from './routing/Content';
+import { createStore } from './context';
+import { events } from './context/events';
+
+const { GlobalStore }: any = createStore({
+  initialState: {
+    token: 'blah'
+  },
+  events
+});
 
 describe('App Render', () => {
   let wrapper: ShallowWrapper;
 
   beforeAll(() => {
-    wrapper = shallow(<App />);
+    wrapper = shallow(
+      <GlobalStore>
+        <Router>
+          <Header />
+          <PageContainer>
+            <Content />
+          </PageContainer>
+        </Router>
+      </GlobalStore>
+    );
   });
 
   it('renders without crashing', () => {
     expect(wrapper).toBeTruthy();
-  });
-
-  it('renders welcome message', () => {
-    const welcome = <h2>Welcome to React</h2>;
-
-    expect(wrapper.contains(welcome)).toEqual(true);
   });
 
   afterAll(() => {
