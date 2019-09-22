@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "https://michaeldoye.github.io/spotQuiz-fe/",
   "private": true,
   "dependencies": {
     "@types/enzyme": "^3.10.3",
