@@ -15,17 +15,17 @@ export const Header: React.FC<HeaderProps> = () => (
       <ul className="nav">
         <li className="nav-item">
           <Link to={RoutingEnum.home} className={'nav-link text-white'}>
-            home
+            Home
           </Link>
         </li>
         <li className="nav-item">
           <Link to={RoutingEnum.about} className={'nav-link text-white'}>
-            about
+            About
           </Link>
         </li>
         <li className="nav-item">
           <Link to={RoutingEnum.private} className={'nav-link text-white'}>
-            protected
+            Login
           </Link>
         </li>
       </ul>

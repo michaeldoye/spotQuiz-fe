@@ -1,4 +1,4 @@
-.login {
+.login-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,5 +13,11 @@
     padding: 3rem;
     background-color: $white;
     @extend .shadow;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: $text-muted;
   }
 }

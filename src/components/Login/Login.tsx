@@ -37,7 +37,6 @@ export const LoginComponent: React.FC<LoginComponentProps> = ({ onSubmit }) => {
 
   return (
     <div className="login-component">
-      <h3>Login Component</h3>
       <form onSubmit={e => handleSubmit(e)}>
         <LineInputComponent
           label="Username/Email"
@@ -55,13 +54,15 @@ export const LoginComponent: React.FC<LoginComponentProps> = ({ onSubmit }) => {
           placeholder="Please enter your password"
           onChange={(e: any) => handlePasswordChange(e)}
         />
-        <button
-          disabled={!user.password && !user.password}
-          type="submit"
-          className="login-component__submit-button"
-        >
-          Login
-        </button>
+        <div className="login-component__button-container">
+          <button
+            className="login-component__submit-button"
+            disabled={!user.username || !user.password}
+            type="submit"
+          >
+            Sign in
+          </button>
+        </div>
       </form>
     </div>
   );

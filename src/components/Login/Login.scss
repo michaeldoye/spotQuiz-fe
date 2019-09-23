@@ -1,6 +1,11 @@
 .login-component {
   @extend .form-group;
 
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__submit-button {
     @extend .btn, .btn-primary;
   }
