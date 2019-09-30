@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/spotQuiz-fe/static/css/main.36bdf804.chunk.css",
+    "main.js": "/spotQuiz-fe/static/js/main.9d92b069.chunk.js",
+    "main.js.map": "/spotQuiz-fe/static/js/main.9d92b069.chunk.js.map",
+    "runtime-main.js": "/spotQuiz-fe/static/js/runtime-main.5fe8f048.js",
+    "runtime-main.js.map": "/spotQuiz-fe/static/js/runtime-main.5fe8f048.js.map",
+    "static/css/2.e6157a56.chunk.css": "/spotQuiz-fe/static/css/2.e6157a56.chunk.css",
+    "static/js/2.1965ad86.chunk.js": "/spotQuiz-fe/static/js/2.1965ad86.chunk.js",
+    "static/js/2.1965ad86.chunk.js.map": "/spotQuiz-fe/static/js/2.1965ad86.chunk.js.map",
+    "index.html": "/spotQuiz-fe/index.html",
+    "precache-manifest.dc55bfcd93176eefbaceee337b031e9f.js": "/spotQuiz-fe/precache-manifest.dc55bfcd93176eefbaceee337b031e9f.js",
+    "service-worker.js": "/spotQuiz-fe/service-worker.js",
+    "static/css/2.e6157a56.chunk.css.map": "/spotQuiz-fe/static/css/2.e6157a56.chunk.css.map",
+    "static/css/main.36bdf804.chunk.css.map": "/spotQuiz-fe/static/css/main.36bdf804.chunk.css.map",
+    "static/media/logo.svg": "/spotQuiz-fe/static/media/logo.25bf045c.svg"
+  }
+}
