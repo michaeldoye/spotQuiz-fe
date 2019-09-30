@@ -10,10 +10,17 @@ import { render, unmountComponentAtNode } from 'react-dom';
 
 describe('LoginComponent', () => {
   let wrapper: ShallowWrapper;
+  let props: any;
+  let submitSpy: Function;
+
+  beforeEach(() => {
+    submitSpy = jest.fn();
+    props = { onSubmit: submitSpy };
+    wrapper = shallow(<LoginComponent {...props} />);
+  });
 
   describe('Username Field', () => {
     let userNameProps: ComponentProps<any>;
-    let usernameField: ShallowWrapper<any>;
     let container: any;
 
     beforeEach(() => {
@@ -25,14 +32,13 @@ describe('LoginComponent', () => {
         value: '',
         error: ''
       };
-      // usernameField = wrapper.find(LineInputComponent);
       container = document.createElement('div');
       document.body.appendChild(container);
     });
 
     afterEach(() => {
       userNameProps = null;
-      // usernameField.unmount();
+      wrapper.unmount();
       unmountComponentAtNode(container);
       container.remove();
       container = null;
@@ -94,6 +100,9 @@ describe('LoginComponent', () => {
         value: '',
         error: ''
       };
+      submitSpy = jest.fn();
+      props = { onSubmit: submitSpy };
+      wrapper = shallow(<LoginComponent {...props} />);
       passwordField = wrapper.find(PasswordInputComponent);
       container = document.createElement('div');
       document.body.appendChild(container);
@@ -148,9 +157,5 @@ describe('LoginComponent', () => {
 
       expect(button.prop('disabled')).toBe(true);
     });
-  });
-
-  afterEach(() => {
-    // wrapper.unmount();
   });
 });
