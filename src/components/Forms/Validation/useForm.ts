@@ -14,12 +14,6 @@ export function useForm(
     setDisable(true);
   }, []);
 
-  useEffect(() => {
-    if (isDirty) {
-      setDisable(validateState());
-    }
-  }, [state, isDirty]);
-
   const validateState = useCallback(() => {
     return Object.keys(validationSchema).some((key: any) => {
       const isInputFieldRequired: boolean = validationSchema[key].required;
@@ -29,6 +23,12 @@ export function useForm(
       return (isInputFieldRequired && !stateValue) || stateError;
     });
   }, [state, validationSchema]);
+
+  useEffect(() => {
+    if (isDirty) {
+      setDisable(validateState());
+    }
+  }, [state, isDirty, validateState]);
 
   const handleOnChange = useCallback(
     event => {
