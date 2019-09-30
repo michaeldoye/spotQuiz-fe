@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface LineInputComponentProps {
+export interface PasswordInputComponentProps {
   value?: string;
   type?: string;
   onChange?: Function;
@@ -10,7 +10,7 @@ export interface LineInputComponentProps {
   error: string;
 }
 
-export const LineInputComponent: React.FC<LineInputComponentProps> = ({
+export const PasswordInputComponent: React.FC<PasswordInputComponentProps> = ({
   value,
   type,
   label,
@@ -20,12 +20,12 @@ export const LineInputComponent: React.FC<LineInputComponentProps> = ({
   onChange
 }) => {
   return (
-    <div className="line-input-component">
-      <label className="line-input-component__label">
-        <span className="line-input-component__label-text">{label}</span>
+    <div className="password-input-component">
+      <label className="password-input-component__label">
+        <span className="password-input-component__label-text">{label}</span>
         <input
-          data-test="username"
-          className="line-input-component__input"
+          data-test="password"
+          className="password-input-component__input"
           name={name}
           type={type}
           defaultValue={value}

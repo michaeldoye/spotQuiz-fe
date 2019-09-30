@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = () => (
         </li>
         <li className="nav-item">
           <Link to={RoutingEnum.private} className={'nav-link text-white'}>
-            Login
+            Modules
           </Link>
         </li>
       </ul>

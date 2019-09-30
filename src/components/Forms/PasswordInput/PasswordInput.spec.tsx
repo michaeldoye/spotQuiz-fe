@@ -1,9 +1,9 @@
 import React, { ComponentProps } from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import { LineInputComponent } from './LineInput';
+import { PasswordInputComponent } from './PasswordInput';
 
-describe('LineInputComponent Render', () => {
+describe('PasswordInputComponent Render', () => {
   let wrapper: ShallowWrapper;
   let props: ComponentProps<any>;
   let changeSpy: Function;
@@ -11,20 +11,18 @@ describe('LineInputComponent Render', () => {
   beforeAll(() => {
     changeSpy = jest.fn();
     props = { name: 'test', label: 'test', onChange: changeSpy };
-    wrapper = shallow(<LineInputComponent {...props} />);
+    wrapper = shallow(<PasswordInputComponent {...props} />);
   });
 
   it('renders without crashing', () => {
     expect(wrapper).toBeTruthy();
   });
 
-  it('should emit onChange when change event fired', () => {
+  it('should emit onChange when change event triggered', () => {
     wrapper.find('input').simulate('change');
 
     expect(changeSpy).toHaveBeenCalled();
   });
-
-  // TODO: test that value is updated
 
   afterAll(() => {
     wrapper.unmount();

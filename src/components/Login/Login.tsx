@@ -1,63 +1,61 @@
-import React, { SetStateAction, useState } from 'react';
+import React from 'react';
+
 import { LineInputComponent } from '../Forms/LineInput/LineInput';
+import { PasswordInputComponent } from '../Forms/PasswordInput/PasswordInput';
+import { useForm } from '../Forms/Validation/useForm';
+import { validationStateSchema } from './validation/validation.schema';
 
 interface LoginComponentProps {
   onSubmit?: Function;
 }
 
 interface LoginComponentState {
-  username?: string;
-  password?: string;
+  username?: InputState;
+  password?: InputState;
 }
 
+interface InputState {
+  value: string;
+  error: string;
+}
+
+const stateSchema: LoginComponentState = {
+  username: { value: '', error: '' },
+  password: { value: '', error: '' }
+};
+
 export const LoginComponent: React.FC<LoginComponentProps> = ({ onSubmit }) => {
-  const initialState: LoginComponentState = { username: '', password: '' };
-  const [user, setUser] = useState(initialState);
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    onSubmit && onSubmit(user);
-  };
-
-  const handleUsernameChange = (event: any) => {
-    const userCredentials: SetStateAction<LoginComponentState> = {
-      username: event.currentTarget.value,
-      password: user.password
-    };
-    setUser(userCredentials);
-  };
-
-  const handlePasswordChange = (event: any) => {
-    const userCredentials: SetStateAction<LoginComponentState> = {
-      username: user.username,
-      password: event.currentTarget.value
-    };
-    setUser(userCredentials);
-  };
+  const { state, handleOnChange, handleOnSubmit, disable } = useForm(
+    stateSchema,
+    validationStateSchema,
+    onSubmit as Function
+  );
 
   return (
     <div className="login-component">
-      <form onSubmit={e => handleSubmit(e)}>
+      <form onSubmit={handleOnSubmit}>
         <LineInputComponent
-          label="Username/Email"
+          label="Email"
           name="username"
           type="text"
-          placeholder="username"
-          value={user.username}
-          onChange={(e: any) => handleUsernameChange(e)}
+          placeholder="Your Email"
+          value={state.username.value}
+          error={state.username.error}
+          onChange={handleOnChange}
         />
-        <LineInputComponent
+        <PasswordInputComponent
           label="Password"
           name="password"
           type="password"
-          value={user.password}
           placeholder="Please enter your password"
-          onChange={(e: any) => handlePasswordChange(e)}
+          value={state.password.value}
+          error={state.password.error}
+          onChange={handleOnChange}
         />
         <div className="login-component__button-container">
           <button
             className="login-component__submit-button"
-            disabled={!user.username || !user.password}
+            disabled={disable}
             type="submit"
           >
             Sign in
