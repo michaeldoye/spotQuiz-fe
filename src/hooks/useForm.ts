@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { isObject, isRegExp } from '../../../helpers';
+import { isObject, isRegExp } from '../helpers';
 
 export function useForm(
   stateSchema: any = {},

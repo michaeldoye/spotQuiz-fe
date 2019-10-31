@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { PageContainer } from '../PageContainer';
 
 export interface HorizontalSplitProps {
-  leftSide?: Component;
-  rightSide?: Component;
+  leftSide?: React.FC;
+  rightSide?: React.FC;
 }
 
 export const HorizontalSplit: React.FC<HorizontalSplitProps> = ({

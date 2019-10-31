@@ -11,6 +11,10 @@
     @extend .container;
   }
 
+  &__left {
+    flex: 1 0 auto;
+  }
+
   &__logo {
     height: 60px;
   }

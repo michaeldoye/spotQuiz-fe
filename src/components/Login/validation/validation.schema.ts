@@ -1,4 +1,4 @@
-import { LoginFormValidationSchema } from './validation.model';
+import { LoginFormValidationSchema } from '../../../models/validation.model';
 
 export const validationStateSchema: LoginFormValidationSchema = {
   username: {

@@ -10,7 +10,7 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   paragraph,
   children
 }) => (
-  <div className="container">
+  <div className="container pt-5">
     {title && <h2>{title}</h2>}
     {paragraph && <p>{paragraph}</p>}
     {children}

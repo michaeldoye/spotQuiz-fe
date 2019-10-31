@@ -2,11 +2,12 @@ import React from 'react';
 
 import { LineInputComponent } from '../Forms/LineInput/LineInput';
 import { PasswordInputComponent } from '../Forms/PasswordInput/PasswordInput';
-import { useForm } from '../Forms/Validation/useForm';
+import { useForm } from '../../hooks/useForm';
 import { validationStateSchema } from './validation/validation.schema';
 
 interface LoginComponentProps {
   onSubmit?: Function;
+  buttonText?: string;
 }
 
 interface LoginComponentState {
@@ -24,7 +25,10 @@ const stateSchema: LoginComponentState = {
   password: { value: '', error: '' }
 };
 
-export const LoginComponent: React.FC<LoginComponentProps> = ({ onSubmit }) => {
+export const LoginComponent: React.FC<LoginComponentProps> = ({
+  onSubmit,
+  buttonText
+}) => {
   const { state, handleOnChange, handleOnSubmit, disable } = useForm(
     stateSchema,
     validationStateSchema,
@@ -58,7 +62,7 @@ export const LoginComponent: React.FC<LoginComponentProps> = ({ onSubmit }) => {
             disabled={disable}
             type="submit"
           >
-            Sign in
+            {buttonText}
           </button>
         </div>
       </form>
