@@ -4,6 +4,7 @@ import { LoginComponent } from '../../components/Login/Login';
 import { createUserWithEmail, loginWithEmail } from '../../auth/auth';
 import { RoutingEnum } from '../../routing/routing.enum';
 import { Loader } from '../../components/Loader/Loader';
+import { ProfileSectionsEnum } from '../Profile/Sections/ProfileSections.enum';
 
 export interface LoginPageProps {
   username?: string;
@@ -25,7 +26,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
       setError('');
       setLoading(true);
       await fn(username.value, password.value);
-      history.push(RoutingEnum.private);
+      history.push(`${RoutingEnum.profile}/${ProfileSectionsEnum.personal}`);
     } catch (err) {
       setLoading(false);
       setError(err.message || 'Please try again.');

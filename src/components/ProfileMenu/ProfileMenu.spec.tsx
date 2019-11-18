@@ -1,16 +1,16 @@
 import React from 'react';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { unmountComponentAtNode } from 'react-dom';
-import { PageTitleComponent } from './PageTitle';
+import { ProfileMenuComponent } from './ProfileMenu';
 
-describe('PageTitleComponent', () => {
+describe('ProfileMenuComponent', () => {
   let container: any;
   let history: any;
 
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
-    history = { goBack: jest.fn() };
+    history = { push: jest.fn(), location: { pathname: 'test' } };
   });
 
   afterEach(() => {
@@ -19,13 +19,11 @@ describe('PageTitleComponent', () => {
     cleanup();
   });
 
-  it('should go back on click of back button', () => {
-    const { queryByTestId } = render(
-      <PageTitleComponent text="test" history={history} hasBackBtn />
-    );
+  it('should navigate on click of menu item', () => {
+    const { queryByTestId } = render(<ProfileMenuComponent history={history} />);
 
-    fireEvent.click(queryByTestId('back-btn') as HTMLElement);
+    fireEvent.click(queryByTestId('menu-item-0') as HTMLElement);
 
-    expect(history.goBack).toHaveBeenCalled();
+    expect(history.push).toHaveBeenCalled();
   });
 });

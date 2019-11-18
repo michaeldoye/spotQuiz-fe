@@ -1,4 +1,7 @@
 // Add bootstrap overrides here
+$theme-colors: (
+  'primary': #00afef
+);
 
 @import '../../../node_modules/bootstrap/scss/bootstrap';
 

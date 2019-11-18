@@ -1,0 +1,17 @@
+.profile-menu-component {
+  &__list {
+    @extend .list-group;
+  }
+
+  &__list-item {
+    &:focus {
+      outline: none;
+    }
+    @extend .list-group-item;
+    @extend .list-group-item-action;
+  }
+
+  &__icon {
+    float: right;
+  }
+}

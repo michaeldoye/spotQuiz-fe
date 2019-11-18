@@ -1,0 +1,11 @@
+.profile-page {
+  &__details-container,
+  &__menu-container {
+    @include shadowContainer($white, 'sm');
+  }
+
+  &__menu-container {
+    padding: 0;
+    margin-bottom: 15px;
+  }
+}

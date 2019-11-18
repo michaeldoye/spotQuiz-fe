@@ -3,6 +3,7 @@ import { useSession } from '../../hooks/useSession';
 import { signOut } from '../../auth/auth';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import { RoutingEnum } from '../../routing/routing.enum';
+import { ProfileSectionsEnum } from '../../pages/Profile/Sections/ProfileSections.enum';
 
 interface DropdownComponentProps {
   history: any;
@@ -14,10 +15,13 @@ export const DropdownComponent: React.FC<DropdownComponentProps> = ({
   const { ref, isComponentVisible, setIsComponentVisible } = useClickOutside(false);
   const user: any = useSession();
 
-  const handleMenuItemClick = (route: RoutingEnum): void => {
+  const handleMenuItemClick = (route: string): void => {
     history.push(route);
     setIsComponentVisible(false);
   };
+
+  const avatarSrc =
+    user.photoURL || `https://api.adorable.io/avatars/32/${user && user.email}`;
 
   return (
     <div className="dropdown-component" ref={ref}>
@@ -34,7 +38,7 @@ export const DropdownComponent: React.FC<DropdownComponentProps> = ({
           <div className="dropdown-component__header">
             <img
               className="dropdown-component__header-avatar"
-              src={`https://api.adorable.io/avatars/32/${user && user.email}`}
+              src={avatarSrc}
               width="32"
               alt="avatar"
             />
@@ -45,13 +49,21 @@ export const DropdownComponent: React.FC<DropdownComponentProps> = ({
 
           <button
             className="dropdown-item"
-            onClick={() => handleMenuItemClick(RoutingEnum.profile)}
+            onClick={() =>
+              handleMenuItemClick(
+                `${RoutingEnum.profile}/${ProfileSectionsEnum.personal}`
+              )
+            }
           >
             Profile
           </button>
           <button
             className="dropdown-item"
-            onClick={() => handleMenuItemClick(RoutingEnum.settings)}
+            onClick={() =>
+              handleMenuItemClick(
+                `${RoutingEnum.profile}/${ProfileSectionsEnum.settings}`
+              )
+            }
           >
             Settings
           </button>

@@ -1,0 +1,18 @@
+// @param {color} $color
+// @param {string} $shadowSize ('none', 'sm', 'lg')
+@mixin shadowContainer($color, $shadowSize) {
+  background: $color;
+  padding: $container-default-padding;
+  min-height: $container-min-height-px;
+  border-radius: 0.25rem;
+  @extend .shadow-#{$shadowSize};
+}
+
+// @param {number} $duration
+// @param {number} $count
+// @param {string} $type - https://github.com/daneden/animate.css#animations
+@mixin animate($duration, $count, $type) {
+  animation-duration: #{$duration}s;
+  animation-iteration-count: $count;
+  @extend .#{$type};
+}
