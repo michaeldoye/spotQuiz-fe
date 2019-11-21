@@ -7,7 +7,7 @@ interface PageTitleComponentProps {
   hasBackBtn?: boolean;
 }
 
-export const PageTitleComponent: React.FC<PageTitleComponentProps> = ({
+const PageTitleComponent: React.FC<PageTitleComponentProps> = ({
   history,
   text,
   hasBackBtn
@@ -29,3 +29,5 @@ export const PageTitleComponent: React.FC<PageTitleComponentProps> = ({
     </div>
   );
 };
+
+export default PageTitleComponent;

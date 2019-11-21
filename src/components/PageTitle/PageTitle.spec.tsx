@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { unmountComponentAtNode } from 'react-dom';
-import { PageTitleComponent } from './PageTitle';
+import PageTitleComponent from './index';
 
 describe('PageTitleComponent', () => {
   let container: any;

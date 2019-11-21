@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { unmountComponentAtNode } from 'react-dom';
-import { ProfileMenuComponent } from './ProfileMenu';
+import ProfileMenuComponent from './index';
 
 describe('ProfileMenuComponent', () => {
   let container: any;

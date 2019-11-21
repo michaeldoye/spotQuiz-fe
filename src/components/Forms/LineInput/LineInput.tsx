@@ -10,7 +10,7 @@ export interface LineInputComponentProps {
   error: string;
 }
 
-export const LineInputComponent: React.FC<LineInputComponentProps> = ({
+const LineInputComponent: React.FC<LineInputComponentProps> = ({
   value,
   type,
   label,
@@ -37,3 +37,5 @@ export const LineInputComponent: React.FC<LineInputComponentProps> = ({
     </div>
   );
 };
+
+export default LineInputComponent;

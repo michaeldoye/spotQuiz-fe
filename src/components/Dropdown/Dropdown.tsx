@@ -9,7 +9,7 @@ interface DropdownComponentProps {
   history: any;
 }
 
-export const DropdownComponent: React.FC<DropdownComponentProps> = ({
+const DropdownComponent: React.FC<DropdownComponentProps> = ({
   history
 }): ReactComponentElement<any> => {
   const { ref, isComponentVisible, setIsComponentVisible } = useClickOutside(false);
@@ -21,7 +21,8 @@ export const DropdownComponent: React.FC<DropdownComponentProps> = ({
   };
 
   const avatarSrc =
-    user.photoURL || `https://api.adorable.io/avatars/32/${user && user.email}`;
+    (user && user.photoURL) ||
+    `https://api.adorable.io/avatars/32/${user && user.email}`;
 
   return (
     <div className="dropdown-component" ref={ref}>
@@ -79,3 +80,5 @@ export const DropdownComponent: React.FC<DropdownComponentProps> = ({
     </div>
   );
 };
+
+export default DropdownComponent;

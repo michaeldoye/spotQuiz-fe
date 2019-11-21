@@ -18,4 +18,14 @@
   &__logo {
     height: 60px;
   }
+
+  &__nav-link {
+    padding: 1.5rem 1rem;
+    @extend .nav-link;
+    @extend .text-white;
+  }
+
+  &__nav-active {
+    border-bottom: 3px solid;
+  }
 }

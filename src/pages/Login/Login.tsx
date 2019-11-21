@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { LoginComponent } from '../../components/Login/Login';
 import { createUserWithEmail, loginWithEmail } from '../../auth/auth';
 import { RoutingEnum } from '../../routing/routing.enum';
-import { Loader } from '../../components/Loader/Loader';
 import { ProfileSectionsEnum } from '../Profile/Sections/ProfileSections.enum';
+import LoginComponent from '../../components/Login';
+import Loader from '../../components/Loader';
 
-export interface LoginPageProps {
+interface LoginPageProps {
   username?: string;
   password?: string;
 }
 
-export const LoginPage: React.FC<LoginPageProps> = () => {
+const LoginPage: React.FC<LoginPageProps> = () => {
   const history = useHistory();
 
   const [loading, setLoading] = useState(false);
@@ -61,3 +61,5 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
     </div>
   );
 };
+
+export default LoginPage;

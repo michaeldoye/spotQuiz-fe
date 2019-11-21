@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import { PrivateRoute } from '../../../routing/PrivateRoute/PrivateRoute';
 import { RoutingEnum } from '../../../routing/routing.enum';
-import { ProfileFormComponent } from '../../../components/ProfileForm/ProfileForm';
 import { ProfileSectionsEnum } from './ProfileSections.enum';
+import PrivateRoute from '../../../routing/PrivateRoute';
+import ProfileFormComponent from '../../../components/ProfileForm';
 
-export const ProfileSections = () => {
+const ProfileSections = () => {
   return (
     <Switch>
       <PrivateRoute
@@ -27,3 +27,5 @@ export const ProfileSections = () => {
     </Switch>
   );
 };
+
+export default ProfileSections;

@@ -2,9 +2,9 @@ import React, { ComponentProps } from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { fireEvent } from '@testing-library/dom';
 
-import { LoginComponent } from './Login';
-import { LineInputComponent } from '../Forms/LineInput/LineInput';
-import { PasswordInputComponent } from '../Forms/PasswordInput/PasswordInput';
+import LoginComponent from './index';
+import LineInputComponent from '../Forms/LineInput';
+import PasswordInputComponent from '../Forms/PasswordInput';
 import { act } from 'react-dom/test-utils';
 import { render, unmountComponentAtNode } from 'react-dom';
 

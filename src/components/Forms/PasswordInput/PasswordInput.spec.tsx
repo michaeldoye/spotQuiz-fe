@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import { PasswordInputComponent } from './PasswordInput';
+import PasswordInputComponent from './index';
 
 describe('PasswordInputComponent Render', () => {
   let wrapper: ShallowWrapper;

@@ -1,17 +1,15 @@
 import React from 'react';
-import { PageTitleComponent } from '../../components/PageTitle/PageTitle';
 import { useHistory } from 'react-router-dom';
-import { ProfileMenuComponent } from '../../components/ProfileMenu/ProfileMenu';
-import { ProfileSections } from './Sections/ProfileSections';
+import ProfileSections from './Sections';
+import ProfileMenuComponent from '../../components/ProfileMenu/ProfileMenu';
 
-export interface ProfilePageProps {}
+interface ProfilePageProps {}
 
-export const ProfilePage: React.FC<ProfilePageProps> = () => {
+const ProfilePage: React.FC<ProfilePageProps> = () => {
   const history = useHistory();
 
   return (
     <div className="profile-page">
-      <PageTitleComponent text="profile" history={history} hasBackBtn />
       <div className="row">
         <div className="col-sm-4">
           <div className="profile-page__menu-container">
@@ -27,3 +25,5 @@ export const ProfilePage: React.FC<ProfilePageProps> = () => {
     </div>
   );
 };
+
+export default ProfilePage;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Header } from './layout/Header/Header';
-import { PageContainer } from './layout/PageContainer';
-import { Content } from './routing/Content';
+import Header from './layout/Header';
+import PageContainer from './layout/PageContainer';
+import Content from './routing/Content';
 
 describe('App Render', () => {
   let wrapper: ShallowWrapper;

@@ -10,7 +10,7 @@ export interface PasswordInputComponentProps {
   error: string;
 }
 
-export const PasswordInputComponent: React.FC<PasswordInputComponentProps> = ({
+const PasswordInputComponent: React.FC<PasswordInputComponentProps> = ({
   value,
   type,
   label,
@@ -37,3 +37,5 @@ export const PasswordInputComponent: React.FC<PasswordInputComponentProps> = ({
     </div>
   );
 };
+
+export default PasswordInputComponent;

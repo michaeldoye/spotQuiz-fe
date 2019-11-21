@@ -1,16 +1,16 @@
 import React from 'react';
 import logo from '../../logo.svg';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { RoutingEnum } from '../../routing/routing.enum';
 import { useSession } from '../../hooks/useSession';
-import { DropdownComponent } from '../../components/Dropdown/Dropdown';
+import DropdownComponent from '../../components/Dropdown';
 
-export interface HeaderProps {
+interface HeaderProps {
   title?: string;
   paragraph?: string;
 }
 
-export const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = () => {
   const user = useSession();
   const history = useHistory();
 
@@ -20,19 +20,32 @@ export const Header: React.FC<HeaderProps> = () => {
         <img src={logo} className="header__logo" alt="logo" />
         <ul className="nav header__left">
           <li className="nav-item">
-            <Link to={RoutingEnum.home} className={'nav-link text-white'}>
+            <NavLink
+              exact
+              to={RoutingEnum.home}
+              activeClassName="header__nav-active"
+              className="header__nav-link"
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={RoutingEnum.about} className={'nav-link text-white'}>
+            <NavLink
+              to={RoutingEnum.about}
+              activeClassName="header__nav-active"
+              className="header__nav-link"
+            >
               About
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={RoutingEnum.private} className={'nav-link text-white'}>
+            <NavLink
+              to={RoutingEnum.modules}
+              activeClassName="header__nav-active"
+              className="header__nav-link"
+            >
               Modules
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <ul className="nav header__right">
@@ -44,3 +57,5 @@ export const Header: React.FC<HeaderProps> = () => {
     </header>
   );
 };
+
+export default Header;

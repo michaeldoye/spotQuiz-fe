@@ -1,7 +1,6 @@
 import React, { ComponentProps } from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-
-import { PageContainer } from './index';
+import PageContainer from './index';
 
 describe('PageContainer Render', () => {
   let wrapper: ShallowWrapper;

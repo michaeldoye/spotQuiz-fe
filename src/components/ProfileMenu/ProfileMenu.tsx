@@ -1,13 +1,13 @@
 import React, { ReactComponentElement } from 'react';
 import { MenuItem } from '../../models/menu.model';
 import { profileMenu } from '../../constants/ProfileMenuItems';
-import { IconComponent } from '../Icon/Icon';
+import IconComponent from '../Icon/Icon';
 
 interface ProfileMenuComponentProps {
   history: any;
 }
 
-export const ProfileMenuComponent: React.FC<ProfileMenuComponentProps> = ({
+const ProfileMenuComponent: React.FC<ProfileMenuComponentProps> = ({
   history
 }): ReactComponentElement<any> => {
   const { pathname } = history.location;
@@ -36,3 +36,5 @@ export const ProfileMenuComponent: React.FC<ProfileMenuComponentProps> = ({
     </div>
   );
 };
+
+export default ProfileMenuComponent;

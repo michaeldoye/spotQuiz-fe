@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import { LineInputComponent } from './LineInput';
+import LineInputComponent from './index';
 
 describe('LineInputComponent Render', () => {
   let wrapper: ShallowWrapper;

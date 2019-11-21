@@ -23,7 +23,9 @@ const SvgOval = (props: LoaderInterface) => (
   </svg>
 );
 
-export const Loader = (props: LoaderInterface) => {
+const Loader = (props: LoaderInterface) => {
   const { width = 48, height = 48 } = props;
   return <SvgOval width={width} height={height} />;
 };
+
+export default Loader;

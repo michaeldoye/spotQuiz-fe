@@ -1,8 +1,7 @@
 export enum RoutingEnum {
-  login = '/login',
   home = '/',
+  login = '/login',
   about = '/about',
-  private = '/private',
-  profile = '/profile',
-  settings = '/settings'
+  modules = '/modules',
+  profile = '/profile'
 }

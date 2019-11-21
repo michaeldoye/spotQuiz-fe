@@ -1,10 +1,10 @@
 import React from 'react';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { unmountComponentAtNode } from 'react-dom';
-import { DropdownComponent } from './Dropdown';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import { firebaseConfig } from '../../firebase-config';
+import DropdownComponent from './index';
 
 describe('DropdownComponent', () => {
   let container: any;
